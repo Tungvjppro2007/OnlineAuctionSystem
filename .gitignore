@@ -1,0 +1,27 @@
+# === 1. Tệp biên dịch & Đóng gói của Maven ===
+target/
+*.class
+*.jar
+*.war
+
+# === 2. Cấu hình IDE IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# === 3. Cấu hình IDE Eclipse ===
+.settings/
+.classpath
+.project
+
+# === 4. Cấu hình IDE VS Code ===
+.vscode/
+
+# === 5. File hệ thống (macOS / Windows) ===
+.DS_Store
+Thumbs.db
+
+# === 6. Dữ liệu thử nghiệm cục bộ (Nếu không muốn đẩy file .dat lên) ===
+# data/*.dat
