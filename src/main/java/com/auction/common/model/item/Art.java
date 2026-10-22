@@ -1,4 +1,5 @@
-class Art extends com.auction.model.item.Item {
+
+class Art extends Item {
     public Art(String name,String description){
         super(name,description);
     }

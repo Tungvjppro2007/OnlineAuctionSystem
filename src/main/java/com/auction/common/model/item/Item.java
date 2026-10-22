@@ -1,4 +1,4 @@
-package com.auction.model.item;
+
 
 public abstract class Item{
     private String name;
@@ -13,7 +13,7 @@ public abstract class Item{
     public String getDescription() {
         return description;
     }
-    public abstract String getCategory(){}
+    public abstract String getCategory();
 }
 
 

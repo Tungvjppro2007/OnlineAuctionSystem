@@ -1,4 +1,4 @@
-class Vehicle extends com.auction.model.item.Item {
+class Vehicle extends Item {
     public Vehicle(String name,String description){
         super(name,description);
     }

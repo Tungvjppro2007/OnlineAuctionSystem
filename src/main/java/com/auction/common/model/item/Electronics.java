@@ -1,5 +1,5 @@
 
-class Electronics extends com.auction.model.item.Item {
+class Electronics extends Item {
     public Electronics(String name,String description){
         super(name,description);
     }
