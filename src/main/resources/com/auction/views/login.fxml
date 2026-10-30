@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="[đã xoá đường liên kết đáng ngờ].client.controllers.LoginController">
+<StackPane prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.LoginController">
    <children>
       
       <!-- Khung Card Trung Tâm Chia 2 Bên -->
@@ -36,7 +36,7 @@
                   <!-- Logo UET với hiệu ứng phát sáng -->
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/com/auction/images/uet_logo.png" />
+                        <Image url="@../images/uet_logo.png" />
                      </image>
                      <effect>
                         <DropShadow radius="15.0" spread="0.2">
@@ -60,7 +60,7 @@
                            </font>
                         </Label>
                      </children>
-                  </VBox>
+                     </VBox>
 
                   <Line endX="80.0" opacity="0.3" startX="-80.0" stroke="#ffffff" strokeWidth="0.8" />
 
@@ -121,8 +121,7 @@
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
-                              </Label>
-                              <PasswordField fx:id="passwordField" promptText="Nhập mật khẩu..." style="-fx-background-color: #f8fafc; -fx-border-color: #cbd5e1; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10 12; -fx-font-size: 13px;" />
+                              </Label><PasswordField fx:id="passwordField" promptText="Nhập mật khẩu..." style="-fx-background-color: #f8fafc; -fx-border-color: #cbd5e1; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10 12; -fx-font-size: 13px;" />
                            </children>
                         </VBox>
                      </children>
