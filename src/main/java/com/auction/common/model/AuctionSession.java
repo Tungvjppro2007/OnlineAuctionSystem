@@ -12,7 +12,7 @@ public class AuctionSession implements Serializable {
     private String auctionId;
     private Item item;
     private double currentPrice;
-    private Bidder highestBidder;
+    private String highestBidder;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private AuctionStatus status;
@@ -27,7 +27,7 @@ public class AuctionSession implements Serializable {
         this.status = AuctionStatus.OPEN;
         this.bidHistory = new ArrayList<>();
     }
-    public synchronized boolean placeBid(Bidder bidder,double amount){
+    public synchronized boolean placeBid(String bidder,double amount){
         if(status != AuctionStatus.RUNNING){
             return false;
         }
@@ -44,7 +44,7 @@ public class AuctionSession implements Serializable {
         BidTransaction tx = new BidTransaction(
                 "BID-" + System.currentTimeMillis(),
                 this.auctionId,
-                bidder.getId(),
+                bidder,
                 amount,
                 LocalDateTime.now()
         );
@@ -56,7 +56,7 @@ public class AuctionSession implements Serializable {
     public String getAuctionId() { return auctionId; }
     public Item getItem() { return item; }
     public double getCurrentPrice() { return currentPrice; }
-    public Bidder getHighestBidder() { return highestBidder; }
+    public String getHighestBidder() { return highestBidder; }
     public AuctionStatus getStatus() { return status; }
     public void setStatus(AuctionStatus status) { this.status = status; }
     public List<BidTransaction> getBidHistory() { return bidHistory; }

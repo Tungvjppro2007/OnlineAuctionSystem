@@ -7,10 +7,10 @@ public class BidTransaction implements Serializable {
     private static final long serialVersionUID = 1L;
     private String bidId;
     private String auctionId;
-    private Bidder bidderId;
+    private String bidderId;
     private double amount;
     private LocalDateTime timestamp;
-    public BidTransaction(String bidId, String auctionId, Bidder bidderId, double amount, LocalDateTime timestamp) {
+    public BidTransaction(String bidId, String auctionId, String bidderId, double amount, LocalDateTime timestamp) {
         this.bidId = bidId;
         this.auctionId = auctionId;
         this.bidderId = bidderId;
@@ -21,8 +21,8 @@ public class BidTransaction implements Serializable {
     public void setBidId(String bidId) { this.bidId = bidId; }
     public String getAuctionId() { return auctionId; }
     public void setAuctionId(String auctionId) { this.auctionId = auctionId; }
-    public Bidder getBidderId() { return bidderId; }
-    public void setBidderId(Bidder bidderId) { this.bidderId = bidderId; }
+    public String getBidderId() { return bidderId; }
+    public void setBidderId(String bidderId) { this.bidderId = bidderId; }
     public double getAmount() { return amount; }
     public void setAmount(double amount) { this.amount = amount; }
     public LocalDateTime getTimestamp() { return timestamp; }
