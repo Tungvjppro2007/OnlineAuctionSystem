@@ -1,4 +1,4 @@
-package com.auction.common.exception;
+package com.auction.common.exceptions;
 
 public class AuctionClosedException extends RuntimeException{
     public AuctionClosedException (String message){
