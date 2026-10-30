@@ -1,17 +1,16 @@
 package com.auction.common.payload;
+import com.auction.common.model.Bidder;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
 public class BidTransaction implements Serializable {
     private static final long serialVersionUID = 1L;
     private String bidId;
     private String auctionId;
-    private String bidderId;
+    private Bidder bidderId;
     private double amount;
     private LocalDateTime timestamp;
-
-    public BidTransaction(String bidId, String auctionId, String bidderId, double amount, LocalDateTime timestamp) {
+    public BidTransaction(String bidId, String auctionId, Bidder bidderId, double amount, LocalDateTime timestamp) {
         this.bidId = bidId;
         this.auctionId = auctionId;
         this.bidderId = bidderId;
@@ -20,16 +19,12 @@ public class BidTransaction implements Serializable {
     }
     public String getBidId() { return bidId; }
     public void setBidId(String bidId) { this.bidId = bidId; }
-
     public String getAuctionId() { return auctionId; }
     public void setAuctionId(String auctionId) { this.auctionId = auctionId; }
-
-    public String getBidderId() { return bidderId; }
-    public void setBidderId(String bidderId) { this.bidderId = bidderId; }
-
+    public Bidder getBidderId() { return bidderId; }
+    public void setBidderId(Bidder bidderId) { this.bidderId = bidderId; }
     public double getAmount() { return amount; }
     public void setAmount(double amount) { this.amount = amount; }
-
     public LocalDateTime getTimestamp() { return timestamp; }
     public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 

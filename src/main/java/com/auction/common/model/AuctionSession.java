@@ -1,6 +1,7 @@
 package com.auction.common.model;
 
 import com.auction.common.payload.BidTransaction;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -59,5 +60,16 @@ public class AuctionSession implements Serializable {
     public AuctionStatus getStatus() { return status; }
     public void setStatus(AuctionStatus status) { this.status = status; }
     public List<BidTransaction> getBidHistory() { return bidHistory; }
-
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
 }
