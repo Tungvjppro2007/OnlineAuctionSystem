@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="750.0" prefWidth="1100.0" style="-fx-background-color: #f1f5f9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.ItemDetailController">
+   
+   <!-- TOP AREA: NAVBAR 2 TẦNG ĐỒNG BỘ -->
+   <top>
+      <VBox style="-fx-background-color: #0f172a;">
+         <children>
+            <!-- 1. MAIN NAVBAR -->
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" spacing="10.0" style="-fx-background-color: #1e293b; -fx-padding: 0 25 0 25; -fx-border-color: #334155; -fx-border-width: 0 0 1 0;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
+                     <children>
+                        <Button onAction="#navToHome" style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="🏠 Trang chủ" />
+                        <Button onAction="#navToMyItems" style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="📦 Vật phẩm của tôi" />
+                        <Button onAction="#navToCreateAuction" style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="➕ Tạo phiên mới" />
+                        <Button onAction="#navToProfile" style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="👤 Tài khoản của tôi" />
+                     </children>
+                  </HBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button onAction="#handleLogout" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 12; -fx-cursor: hand; -fx-font-size: 11px;" text="Đăng xuất" />
+               </children>
+            </HBox>
+
+            <!-- 2. SUB-HEADER LOGO -->
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-padding: 0 25 0 25;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" width="15.0">
+                     <color>
+                        <Color red="0.0" green="0.0" blue="0.0" opacity="0.2" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="12.0">
+                     <children>
+                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/uet_logo.png" />
+                           </image>
+                           <clip>
+                              <Circle centerX="17.0" centerY="17.0" radius="17.0" />
+                           </clip>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="UET AUCTION" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Chi Tiết Sản Phẩm &amp; Đặt Giá" textFill="#94a3b8">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button onAction="#handleBack" style="-fx-background-color: #334155; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 16; -fx-cursor: hand;" text="⬅ Quay lại danh sách" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+
+   <!-- CENTER: KHU VỰC HIỂN THỊ CHI TIẾT & ĐẶT GIÁ -->
+   <center>
+      <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
+         <content>
+            <HBox spacing="25.0" style="-fx-padding: 25;">
+               <children>
+                  <!-- CỘT BÊN TRÁI: HÌNH ẢNH SẢN PHẨM & MÔ TẢ -->
+                  <VBox prefWidth="600.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" color="#0000000d" radius="10.0" />
+                     </effect>
+                     <children>
+                        <!-- Ảnh đại diện lớn -->
+                        <VBox alignment="CENTER" prefHeight="320.0" style="-fx-background-color: #f8fafc; -fx-background-radius: 8;">
+                           <children>
+                              <ImageView fx:id="itemImageView" fitHeight="280.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@com/auction/images/uet_logo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="8.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label fx:id="categoryLabel" style="-fx-background-color: #e2e8f0; -fx-text-fill: #475569; -fx-padding: 4 10; -fx-background-radius: 4; -fx-font-weight: bold; -fx-font-size: 11px;" text="THIẾT BỊ ĐIỆN TỬ" />
+                                    <Label fx:id="statusLabel" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0284c7; -fx-padding: 4 10; -fx-background-radius: 4; -fx-font-weight: bold; -fx-font-size: 11px;" text="🔴 ĐANG DIỄN RA" />
+                                 </children>
+                              </HBox>
+                              <Label fx:id="itemNameLabel" text="Laptop MacBook Pro M3 Max" textFill="#0f172a">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="itemIdLabel" text="Mã phiên: #AUC001" textFill="#94a3b8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="10.0" style="-fx-border-color: #e2e8f0; -fx-border-width: 1 0 0 0; -fx-padding: 15 0 0 0;">
+                           <children>
+                              <Label text="Mô tả sản phẩm:" textFill="#0f172a">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="descriptionLabel" lineSpacing="4.0" text="Sản phẩm chính hãng Apple, tình trạng mới 99% nguyên hộp. Máy sở hữu cấu hình cực mạnh với chip M3 Max, 36GB RAM, SSD 1TB. Đã được kiểm định chất lượng kỹ càng trước khi đưa lên sàn đấu giá UET." textFill="#475569" wrapText="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+
+                  <!-- CỘT BÊN PHẢI: BẢNG ĐẶT GIÁ & THÔNG TIN THỜI GIAN -->
+                  <VBox prefWidth="420.0" spacing="20.0">
+                     <children>
+                        <!-- Khung thông số đấu giá -->
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20;">
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" color="#0000000d" radius="10.0" />
+                           </effect>
+                           <children>
+                              <VBox spacing="4.0" style="-fx-background-color: #f8fafc; -fx-padding: 12; -fx-background-radius: 8;">
+                                 <children>
+                                    <Label text="Giá hiện tại:" textFill="#64748b">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="currentPriceLabel" text="45,000,000 VNĐ" textFill="#0052cc">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="8.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Người giữ giá hiện tại:" textFill="#64748b" />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="highestBidderLabel" text="user_nam99" textFill="#0f172a">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Bước giá tối thiểu:" textFill="#64748b" />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="stepPriceLabel" text="+ 500,000 VNĐ" textFill="#10b981">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Thời gian còn lại:" textFill="#64748b" />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="timeLeftLabel" text="⏱ 05:20 min" textFill="#ef4444">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+
+                              <!-- Ô nhập giá & Nút Đặt giá -->
+                              <VBox spacing="10.0" style="-fx-border-color: #e2e8f0; -fx-border-width: 1 0 0 0; -fx-padding: 15 0 0 0;">
+                                 <children>
+                                    <Label text="Nhập số tiền đặt giá:" textFill="#0f172a">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="bidAmountField" promptText="VD: 45500000" style="-fx-background-color: #f8fafc; -fx-border-color: #cbd5e1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 8;" HBox.hgrow="ALWAYS" />
+                                          <Button onAction="#handlePlaceBid" style="-fx-background-color: #0052cc; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 16; -fx-cursor: hand;" text="🔨 ĐẶT GIÁ" />
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="bidMessageLabel" textFill="#ef4444" wrapText="true">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+
+                        <!-- Nút Dẫn Sang Phòng Đấu Giá Realtime -->
+                        <VBox alignment="CENTER" spacing="8.0" style="-fx-background-color: #0f172a; -fx-background-radius: 12; -fx-padding: 18;">
+                           <children>
+                              <Label text="Bạn muốn theo dõi diễn biến trực tiếp?" textFill="#94a3b8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Button maxWidth="1.2E308" onAction="#handleJoinLiveRoom" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 10; -fx-cursor: hand; -fx-font-size: 13px;" text="🔴 VÀO PHÒNG ĐẤU GIÁ REALTIME" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </center>
+
+</BorderPane>

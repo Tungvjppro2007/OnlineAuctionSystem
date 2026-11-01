@@ -1,0 +1,124 @@
+/* ============================================================
+   1. CẤU HÌNH CHUNG & BẢNG MÀU CHỦ ĐẠO (THEME GLOBAL)
+   ============================================================ */
+   .root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f8fafc;
+}
+
+/* ============================================================
+   2. THIẾT LẬP CHO NÚT BẤM (BUTTONS)
+   ============================================================ */
+.button {
+    -fx-background-color: #0052cc;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 82, 204, 0.2), 6, 0, 0, 2);
+}
+
+/* Hiệu ứng khi rê chuột vào nút */
+.button:hover {
+    -fx-background-color: #0065ff;
+}
+
+/* Hiệu ứng khi nhấn giữ nút */
+.button:pressed {
+    -fx-background-color: #00388d;
+}
+
+/* Nút phụ / Nút Quay lại (Secondary Button) */
+.button-secondary {
+    -fx-background-color: #334155;
+    -fx-text-fill: #ffffff;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #475569;
+}
+
+/* Nút Đặt giá khẩn cấp / Live Bid (Danger / Accent Button) */
+.button-danger {
+    -fx-background-color: linear-gradient(to right, #dc2626, #b91c1c);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.button-danger:hover {
+    -fx-background-color: #ef4444;
+}
+
+/* ============================================================
+   3. Ô NHẬP LIỆU (TEXTFIELD & PASSWORDFIELD)
+   ============================================================ */
+.text-field, .password-field, .text-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 12px;
+    -fx-text-fill: #0f172a;
+}
+
+/* Hiệu ứng khi click focus vào ô nhập */
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #0052cc;
+    -fx-border-width: 2px;
+    -fx-padding: 7px 11px; /* Trừ 1px border để không bị nhảy kích thước */
+}
+
+/* ============================================================
+   4. BẢNG DANH SÁCH SẢN PHẨM (TABLEVIEW)
+   ============================================================ */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* Tiêu đề bảng */
+.table-view .column-header-background {
+    -fx-background-color: #0f172a;
+    -fx-background-radius: 8px 8px 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+/* Dòng trong bảng */
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+/* Dòng được chọn khi click chuột */
+.table-row-cell:filled:selected {
+    -fx-background-color: #e0e7ff;
+}
+
+.table-row-cell:filled:selected .label {
+    -fx-text-fill: #4338ca;
+    -fx-font-weight: bold;
+}
+
+/* ============================================================
+   5. THẺ KHUNG CHỨA (CARDS & CONTAINERS)
+   ============================================================ */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.04), 10, 0, 0, 4);
+}

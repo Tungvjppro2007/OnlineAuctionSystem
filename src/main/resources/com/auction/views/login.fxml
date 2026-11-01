@@ -15,11 +15,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="[đã xoá đường liên kết đáng ngờ].client.controllers.LoginController">
+<StackPane prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.LoginController">
    <children>
-      
-      <!-- Khung Card Trung Tâm Chia 2 Bên -->
-      <HBox maxHeight="520.0" maxWidth="860.0" prefHeight="520.0" prefWidth="860.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20; -fx-overflow: hidden;">
+
+      <!-- Khung card trung tâm chia 2 bên -->
+      <HBox maxHeight="520.0" maxWidth="860.0" prefHeight="520.0" prefWidth="860.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="40.0" radius="19.5" width="40.0">
                <color>
@@ -28,15 +28,14 @@
             </DropShadow>
          </effect>
          <children>
-            
-            <!-- CỘT BÊN TRÁI: THƯƠNG HIỆU UET & SLOGAN -->
+
+            <!-- CỘT TRÁI: THƯƠNG HIỆU UET & SLOGAN -->
             <VBox alignment="CENTER" prefWidth="380.0" spacing="20.0" style="-fx-background-color: linear-gradient(to bottom right, #0052cc, #002b80); -fx-background-radius: 20 0 0 20; -fx-padding: 40;">
                <children>
-                  
-                  <!-- Logo UET với hiệu ứng phát sáng -->
+
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/com/auction/images/uet_logo.png" />
+                        <Image url="@../images/uet_logo.png" />
                      </image>
                      <effect>
                         <DropShadow radius="15.0" spread="0.2">
@@ -71,7 +70,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label text="Nền tảng đấu giá thời gian thực mượt mà &amp; an toàn" textFill="#dbeafe" wrapText="true">
+                        <Label text="Nền tảng đấu giá thời gian thực mượt mà &amp; an toàn" textAlignment="CENTER" textFill="#dbeafe" wrapText="true">
                            <font>
                               <Font size="12.0" />
                            </font>
@@ -82,13 +81,13 @@
                </children>
             </VBox>
 
-            <!-- CỘT BÊN PHẢI: FORM ĐĂNG NHẬP -->
+            <!-- CỘT PHẢI: FORM ĐĂNG NHẬP -->
             <VBox alignment="CENTER_LEFT" prefWidth="480.0" spacing="22.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 20 20 0; -fx-padding: 40 45 40 45;">
                <children>
-                  
+
                   <VBox spacing="6.0">
                      <children>
-                        <Label text="Hello world! 👋" textFill="#0f172a">
+                        <Label text="Hello World 👋" textFill="#0f172a">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -106,7 +105,7 @@
                      <children>
                         <VBox spacing="6.0">
                            <children>
-                              <Label text="Login" textFill="#334155">
+                              <Label text="Tên đăng nhập" textFill="#334155">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -117,28 +116,29 @@
 
                         <VBox spacing="6.0">
                            <children>
-                              <Label text="Password" textFill="#334155">
+                              <Label text="Mật khẩu" textFill="#334155">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <PasswordField fx:id="passwordField" promptText="Nhập mật khẩu..." style="-fx-background-color: #f8fafc; -fx-border-color: #cbd5e1; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10 12; -fx-font-size: 13px;" />
+                              <!-- onAction: nhấn Enter để đăng nhập -->
+                              <PasswordField fx:id="passwordField" onAction="#handleLogin" promptText="Nhập mật khẩu..." style="-fx-background-color: #f8fafc; -fx-border-color: #cbd5e1; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10 12; -fx-font-size: 13px;" />
                            </children>
                         </VBox>
                      </children>
                   </VBox>
 
-                  <!-- Label thông báo lỗi/thành công -->
+                  <!-- Thông báo lỗi / thành công -->
                   <Label fx:id="statusLabel" wrapText="true">
                      <font>
                         <Font size="12.0" />
                      </font>
                   </Label>
 
-                  <!-- Nút bấm Đăng nhập & Đăng ký -->
+                  <!-- Nút Đăng nhập & liên kết Đăng ký -->
                   <VBox spacing="14.0">
                      <children>
-                        <Button fx:id="loginButton" maxWidth="1.2E308" onAction="#handleLogin" style="-fx-background-color: linear-gradient(to right, #0052cc, #1d4ed8); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18; -fx-background-radius: 8; -fx-padding: 12; -fx-cursor: hand;" text="Sign in">
+                        <Button fx:id="loginButton" defaultButton="true" maxWidth="1.2E308" onAction="#handleLogin" style="-fx-background-color: linear-gradient(to right, #0052cc, #1d4ed8); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-padding: 12; -fx-cursor: hand;" text="Đăng nhập">
                            <effect>
                               <DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" width="15.0">
                                  <color>
