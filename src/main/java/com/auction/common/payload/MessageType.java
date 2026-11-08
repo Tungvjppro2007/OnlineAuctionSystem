@@ -4,6 +4,6 @@ public enum MessageType {
     LOGIN,
     CREAT_ITEM,
     BID,
-    SUCCESS,
-    ERROR
+    RESPONSE_SUCCESS,
+    NOTIFICATION, RESPONSE_ERROR
 }

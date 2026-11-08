@@ -1,4 +1,4 @@
-package com.auction.common.model;
+package com.auction.common.model.user;
 
 import java.time.LocalDateTime;
 
@@ -8,6 +8,9 @@ public class Bidder extends User{
         super(id, createAt, username, password, fullName, email, role);
         this.balance=balance;
     }
+    public Bidder(){
+    }
+
     public void deposit(double amount){
         if (amount > 0){
             balance+=amount;

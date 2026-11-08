@@ -1,6 +1,7 @@
 package com.auction.common.patterns;
 
-import com.auction.common.model.*;
+import com.auction.common.model.item.*;
+
 import java.time.LocalDateTime;
 
 public class ItemFactory {
