@@ -1,5 +1,4 @@
 package com.auction.common.payload;
-import com.auction.common.model.Bidder;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

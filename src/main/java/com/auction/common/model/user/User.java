@@ -1,4 +1,4 @@
-package com.auction.common.model;
+package com.auction.common.model.user;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +17,11 @@ public class User extends Entity{
         this.email=email;
         this.role=role;
     }
+
+    public User() {
+
+    }
+
     public String getUsername() {
         return username;
     }

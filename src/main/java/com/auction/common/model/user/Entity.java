@@ -1,4 +1,4 @@
-package com.auction.common.model;
+package com.auction.common.model.user;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -11,6 +11,7 @@ public abstract class Entity implements Serializable{
         this.id= UUID.randomUUID().toString();
         this.createAt=createAt;
     }
+    public Entity(){}
     public String getId() {
         return id;
     }
