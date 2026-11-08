@@ -1,8 +1,10 @@
-package com.auction.common.model;
+package com.auction.common.model.item;
+
+import com.auction.common.model.user.Entity;
 
 import java.time.LocalDateTime;
 
-public abstract class Item extends Entity{
+public abstract class Item extends Entity {
     private String name;
     private String description;
     private double startingPrice;
