@@ -24,14 +24,26 @@ public class AuctionSession implements Serializable, Subject {
     private AuctionStatus status;
     private List<BidTransaction> bidHistory;
     private final transient List<Observer> observers = new CopyOnWriteArrayList<>();
-    public AuctionSession(String auctionId, Item item, double currentPrice, LocalDateTime startTime, LocalDateTime endTime, AuctionStatus status, List<BidTransaction> bidHistory) {
+    
+    public AuctionSession(String auctionId, Item item, LocalDateTime startTime, LocalDateTime endTime) {
         this.auctionId = auctionId;
         this.item = item;
         this.currentPrice = item.getStartingPrice();
         this.startTime = startTime;
         this.endTime = endTime;
-        this.status = AuctionStatus.RUNNING;
+        this.status = AuctionStatus.OPEN;
         this.bidHistory = new ArrayList<>();
+    }
+    // Constructor LOAD TỪ DB (AuctionDao cần cái này)
+    public AuctionSession(String auctionId, Item item, double currentPrice, String highestBidder, LocalDateTime startTime, LocalDateTime endTime, AuctionStatus status, List<BidTransaction> bidHistory) {
+        this.auctionId = auctionId;
+        this.item = item;
+        this.currentPrice = currentPrice;
+        this.highestBidder = highestBidder;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.status = status;
+        this.bidHistory = (bidHistory != null) ? bidHistory : new ArrayList<>();
     }
     public AuctionSession(){}
     public synchronized boolean placeBid(String bidder, double amount) {

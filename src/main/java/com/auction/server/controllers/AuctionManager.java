@@ -57,13 +57,9 @@ public class AuctionManager {
 
         // 🚀 2. Khởi tạo phiên AUC101
         AuctionSession session1 = new AuctionSession(
-                "AUC101",                       // auctionId
-                item,                           // item
-                100.0,                          // currentPrice
-                LocalDateTime.now(),            // startTime
-                LocalDateTime.now().plusDays(1),// endTime
-                AuctionStatus.RUNNING,           // status (hoặc AuctionStatus.OPEN tùy enum của bạn)
-                new java.util.ArrayList<>()     // bidHistory
+                "AUC101", item,
+                LocalDateTime.now(),
+                LocalDateTime.now().plusDays(1)
         );
 
         // 🚀 3. Lưu phiên vào danh sách

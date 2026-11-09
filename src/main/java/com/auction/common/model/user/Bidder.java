@@ -26,4 +26,8 @@ public class Bidder extends User{
             throw new IllegalArgumentException();
         }
     }
+
+    public double getBalance() {
+        return balance;
+    }
 }
